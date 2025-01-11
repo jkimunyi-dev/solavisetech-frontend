@@ -13,11 +13,50 @@ const Newsletter = () => {
 	const [errors, setErrors] = useState({});
 	const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
 
-	// Country codes array remains the same
+	// Country codes 
 	const countryCodes = [
 		{ code: '+213', country: 'Algeria', flag: '🇩🇿' },
-		// ... rest of your country codes
+		{ code: '+61', country: 'Australia', flag: '🇦🇺' },
+		{ code: '+229', country: 'Benin', flag: '🇧🇯' },
+		{ code: '+267', country: 'Botswana', flag: '🇧🇼' },
+		{ code: '+55', country: 'Brazil', flag: '🇧🇷' },
+		{ code: '+237', country: 'Cameroon', flag: '🇨🇲' },
+		{ code: '+86', country: 'China', flag: '🇨🇳' },
+		{ code: '+243', country: 'DR Congo', flag: '🇨🇩' },
+		{ code: '+240', country: 'Equatorial Guinea', flag: '🇬🇶' },
+		{ code: '+251', country: 'Ethiopia', flag: '🇪🇹' },
+		{ code: '+233', country: 'Ghana', flag: '🇬🇭' },
+		{ code: '+49', country: 'Germany', flag: '🇩🇪' },
+		{ code: '+220', country: 'Gambia', flag: '🇬🇲' },
+		{ code: '+91', country: 'India', flag: '🇮🇳' },
+		{ code: '+225', country: 'Ivory Coast', flag: '🇨🇮' },
+		{ code: '+81', country: 'Japan', flag: '🇯🇵' },
+		{ code: '+254', country: 'Kenya', flag: '🇰🇪' },
+		{ code: '+231', country: 'Liberia', flag: '🇱🇷' },
+		{ code: '+218', country: 'Libya', flag: '🇱🇾' },
+		{ code: '+265', country: 'Malawi', flag: '🇲🇼' },
+		{ code: '+223', country: 'Mali', flag: '🇲🇱' },
+		{ code: '+222', country: 'Mauritania', flag: '🇲🇷' },
+		{ code: '+230', country: 'Mauritius', flag: '🇲🇺' },
+		{ code: '+212', country: 'Morocco', flag: '🇲🇦' },
+		{ code: '+258', country: 'Mozambique', flag: '🇲🇿' },
+		{ code: '+234', country: 'Nigeria', flag: '🇳🇬' },
+		{ code: '+262', country: 'Reunion', flag: '🇷🇪' },
+		{ code: '+7', country: 'Russia', flag: '🇷🇺' },
+		{ code: '+250', country: 'Rwanda', flag: '🇷🇼' },
+		{ code: '+239', country: 'Sao Tome and Principe', flag: '🇸🇹' },
+		{ code: '+221', country: 'Senegal', flag: '🇸🇳' },
+		{ code: '+232', country: 'Sierra Leone', flag: '🇸🇱' },
+		{ code: '+27', country: 'South Africa', flag: '🇿🇦' },
+		{ code: '+44', country: 'UK', flag: '🇬🇧' },
+		{ code: '+1', country: 'USA', flag: '🇺🇸' },
+		{ code: '+256', country: 'Uganda', flag: '🇺🇬' },
+		{ code: '+228', country: 'Togo', flag: '🇹🇬' },
+		{ code: '+255', country: 'Tanzania', flag: '🇹🇿' },
+		{ code: '+216', country: 'Tunisia', flag: '🇹🇳' },
+		{ code: '+260', country: 'Zambia', flag: '🇿🇲' }
 	];
+
 
 	const validateForm = () => {
 		const newErrors = {};

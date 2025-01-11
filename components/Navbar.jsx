@@ -24,9 +24,9 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <span className="text-2xl font-bold text-blue-900">
+            <span className="font-phonk-regular text-2xl font-bold text-blue-800">
               Solavise
-              <span className="text-gray-600">Tech</span>
+              <span className="font-phonk-contrast text-yellow-300">Tech</span>
             </span>
           </div>
 
