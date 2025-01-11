@@ -14,25 +14,28 @@ const Navigation = () => {
     { name: 'Other Services', href: '/otherservices' },
   ];
 
-  const navItemClass = "block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-900 transition-all duration-300 hover:bg-white/50 rounded-md backdrop-blur-sm";
-  const desktopNavItemClass = "text-sm lg:text-base text-gray-700 hover:text-gray-900 transition-all duration-300 font-bold px-2 py-1 rounded-md hover:bg-white/50 backdrop-blur-sm";
+  const navItemClass = "block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-900 transition-all duration-300 hover:bg-white/50 rounded-md";
+  const desktopNavItemClass = "text-sm lg:text-base text-gray-700 hover:text-gray-900 transition-all duration-300 font-bold px-2 py-1 rounded-md hover:bg-white/50";
+  const getStartedButtonClass = "rounded-lg border-2 border-blue-800 py-2 px-4 font-sans text-sm font-bold text-blue-900 transition-all hover:opacity-75 focus:ring focus:ring-blue-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50";
 
   return (
     <nav className="fixed w-full top-0 z-50 backdrop-blur-md bg-white/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <span className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-800 font-phonk-regular">
-              Solavise
-            </span>
-            <span className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 font-phonk-contrast">
-              Tech
-            </span>
-          </div>
+          <a href="/">
+            <div className="flex-shrink-0">
+              <span className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-800 font-phonk-regular">
+                Solavise
+              </span>
+              <span className="text-lg sm:text-xl lg:text-2xl font-bold text-yellow-400 font-phonk-contrast">
+                Tech
+              </span>
+            </div>
+          </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex flex-1 justify-center">
+          <div className="hidden md:flex flex-1 justify-center items-center">
             <div className="flex items-center space-x-4 lg:space-x-8">
               {navItems.map((item) => (
                 <a
@@ -44,6 +47,13 @@ const Navigation = () => {
                 </a>
               ))}
             </div>
+          </div>
+
+          {/* Desktop Get Started Button */}
+          <div className="hidden md:block">
+            <button className={getStartedButtonClass}>
+              Get Started
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -66,7 +76,7 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden backdrop-blur-md  border-t">
+        <div className="md:hidden backdrop-blur-md border-t">
           <div className="px-4 pt-2 pb-3 space-y-2">
             {navItems.map((item) => (
               <a
@@ -77,10 +87,8 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <button 
-              className={navItemClass}
-            >
-              Sign In
+            <button className={getStartedButtonClass}>
+              Get Started
             </button>
           </div>
         </div>
