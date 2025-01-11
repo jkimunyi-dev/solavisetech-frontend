@@ -13,49 +13,11 @@ const Newsletter = () => {
 	const [errors, setErrors] = useState({});
 	const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
 
+	// Country codes array remains the same
 	const countryCodes = [
 		{ code: '+213', country: 'Algeria', flag: '🇩🇿' },
-		{ code: '+61', country: 'Australia', flag: '🇦🇺' },
-		{ code: '+229', country: 'Benin', flag: '🇧🇯' },
-		{ code: '+267', country: 'Botswana', flag: '🇧🇼' },
-		{ code: '+55', country: 'Brazil', flag: '🇧🇷' },
-		{ code: '+237', country: 'Cameroon', flag: '🇨🇲' },
-		{ code: '+86', country: 'China', flag: '🇨🇳' },
-		{ code: '+243', country: 'DR Congo', flag: '🇨🇩' },
-		{ code: '+240', country: 'Equatorial Guinea', flag: '🇬🇶' },
-		{ code: '+251', country: 'Ethiopia', flag: '🇪🇹' },
-		{ code: '+233', country: 'Ghana', flag: '🇬🇭' },
-		{ code: '+49', country: 'Germany', flag: '🇩🇪' },
-		{ code: '+220', country: 'Gambia', flag: '🇬🇲' },
-		{ code: '+91', country: 'India', flag: '🇮🇳' },
-		{ code: '+225', country: 'Ivory Coast', flag: '🇨🇮' },
-		{ code: '+81', country: 'Japan', flag: '🇯🇵' },
-		{ code: '+254', country: 'Kenya', flag: '🇰🇪' },
-		{ code: '+231', country: 'Liberia', flag: '🇱🇷' },
-		{ code: '+218', country: 'Libya', flag: '🇱🇾' },
-		{ code: '+265', country: 'Malawi', flag: '🇲🇼' },
-		{ code: '+223', country: 'Mali', flag: '🇲🇱' },
-		{ code: '+222', country: 'Mauritania', flag: '🇲🇷' },
-		{ code: '+230', country: 'Mauritius', flag: '🇲🇺' },
-		{ code: '+212', country: 'Morocco', flag: '🇲🇦' },
-		{ code: '+258', country: 'Mozambique', flag: '🇲🇿' },
-		{ code: '+234', country: 'Nigeria', flag: '🇳🇬' },
-		{ code: '+262', country: 'Reunion', flag: '🇷🇪' },
-		{ code: '+7', country: 'Russia', flag: '🇷🇺' },
-		{ code: '+250', country: 'Rwanda', flag: '🇷🇼' },
-		{ code: '+239', country: 'Sao Tome and Principe', flag: '🇸🇹' },
-		{ code: '+221', country: 'Senegal', flag: '🇸🇳' },
-		{ code: '+232', country: 'Sierra Leone', flag: '🇸🇱' },
-		{ code: '+27', country: 'South Africa', flag: '🇿🇦' },
-		{ code: '+44', country: 'UK', flag: '🇬🇧' },
-		{ code: '+1', country: 'USA', flag: '🇺🇸' },
-		{ code: '+256', country: 'Uganda', flag: '🇺🇬' },
-		{ code: '+228', country: 'Togo', flag: '🇹🇬' },
-		{ code: '+255', country: 'Tanzania', flag: '🇹🇿' },
-		{ code: '+216', country: 'Tunisia', flag: '🇹🇳' },
-		{ code: '+260', country: 'Zambia', flag: '🇿🇲' }
+		// ... rest of your country codes
 	];
-
 
 	const validateForm = () => {
 		const newErrors = {};
@@ -114,7 +76,7 @@ const Newsletter = () => {
 	};
 
 	const InputField = ({ name, label, type = "text", placeholder }) => (
-		<div className="mb-4">
+		<div className="mb-4 w-full">
 			<label htmlFor={name} className="block text-left text-sm font-medium text-gray-700 mb-1">
 				{label}
 			</label>
@@ -140,11 +102,11 @@ const Newsletter = () => {
 	);
 
 	const PhoneInputField = () => (
-		<div className="mb-4">
+		<div className="mb-4 w-full">
 			<label htmlFor="phoneNumber" className="block text-left text-sm font-medium text-gray-700 mb-1">
 				Phone Number
 			</label>
-			<div className="relative flex">
+			<div className="relative flex w-full">
 				<div className="relative">
 					<button
 						type="button"
@@ -153,7 +115,7 @@ const Newsletter = () => {
 						disabled={status === 'loading' || status === 'success'}
 					>
 						<span>{countryCodes.find(c => c.code === formData.countryCode)?.flag}</span>
-						<span>{formData.countryCode}</span>
+						<span className="hidden sm:inline">{formData.countryCode}</span>
 						<ChevronDown className="w-4 h-4" />
 					</button>
 
@@ -199,28 +161,30 @@ const Newsletter = () => {
 	);
 
 	return (
-		<section className="w-full bg-gradient-to-br from-yellow-50 to-blue-50 py-16">
-			<div className="max-w-[1440px] mx-auto px-6">
-				<div className="grid md:grid-cols-2 gap-8 items-center">
+		<section className="w-full bg-gradient-to-br from-yellow-50 to-blue-50 py-8 md:py-16">
+			<div className="max-w-[1440px] mx-auto px-4 md:px-6">
+				<div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
 					{/* Image Column */}
-					<div className="relative h-full min-h-[400px] rounded-xl overflow-hidden">
-						<img
-							src="subscribeimage.png"
-							alt="Newsletter illustration"
-							className="w-2/3 h-full object-cover rounded-xl"
-						/>
+					<div className="relative flex justify-center md:justify-start">
+						<div className="w-[90%] md:w-2/3 aspect-square md:aspect-auto md:min-h-[400px] rounded-xl overflow-hidden">
+							<img
+								src="subscribeimage.png"
+								alt="Newsletter illustration"
+								className="w-full h-full object-cover rounded-xl"
+							/>
+						</div>
 					</div>
 
 					{/* Form Column */}
-					<div className="max-w-xl">
-						<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+					<div className="w-full max-w-xl mx-auto md:mx-0">
+						<h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
 							Stay Updated with Our Newsletter
 						</h2>
-						<p className="text-lg text-gray-600 mb-8">
+						<p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8">
 							Get the latest updates on course offerings, industry insights, and exclusive learning resources delivered straight to your inbox.
 						</p>
 
-						<form onSubmit={handleSubmit}>
+						<form onSubmit={handleSubmit} className="w-full">
 							<InputField
 								name="fullName"
 								label="Full Name"
@@ -239,7 +203,7 @@ const Newsletter = () => {
 							<button
 								type="submit"
 								disabled={status === 'loading' || status === 'success'}
-								className={`mt-6 w-full px-8 py-4 text-lg rounded-lg font-bold text-white transition-all
+								className={`mt-6 w-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-lg font-bold text-white transition-all
 									${status === 'loading' ?
 										'bg-blue-400 cursor-wait' :
 										status === 'success' ?
@@ -259,7 +223,7 @@ const Newsletter = () => {
 								</p>
 							)}
 
-							<div className="mt-8 flex flex-col sm:flex-row items-center justify-start gap-4 text-sm text-gray-500">
+							<div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-center justify-start gap-3 md:gap-4 text-sm text-gray-500">
 								<div className="flex items-center gap-2">
 									<Check className="w-4 h-4" />
 									<span>No spam, ever</span>

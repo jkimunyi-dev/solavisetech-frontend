@@ -15,12 +15,12 @@ export default function LogoSlider() {
   ];
 
   return (
-    <div className="w-full overflow-x-auto bg-white py-4">
-      <div className="flex gap-8 px-4 justify-start">
+    <div className="w-full h-full overflow-x-auto bg-white">
+      <div className="flex gap-8 px-4 justify-start h-full">
         {logos.map((logo) => (
           <div
             key={logo.id}
-            className="flex-shrink-0 w-[160px] h-[100px] md:w-[200px] md:h-[130px] flex items-center justify-center bg-white rounded-lg shadow-sm"
+            className="flex-shrink-0 w-[160px] h-[80px] md:w-[200px] md:h-[100px] flex items-center justify-center bg-white rounded-lg shadow-sm"
           >
             <img
               src={logo.src}

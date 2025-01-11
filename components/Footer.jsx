@@ -97,7 +97,7 @@ const Footer = () => {
               {socialIcons.map((social, index) => (
                 <a
                   key={index}
-                  className="inline-flex items-center justify-center w-12 h-12 bg-white"
+                  className="inline-flex items-center rounded-lg justify-center w-12 h-12 bg-white"
                   href={social.href}
                 >
                   <social.Icon className="text-blue-800" size={20} />
@@ -107,8 +107,8 @@ const Footer = () => {
           </div>
 
           {/* Footer Links */}
-          <div className="w-full lg:w-2/3 px-5">
-            <div className="flex flex-wrap justify-between -mx-4">
+          <div className="w-full lg:w-2/3 px-0">
+            <div className="flex flex-wrap justify-between -mx-0">
               <FooterLinkSection title="About Us" links={aboutUsLinks} />
               <FooterLinkSection title="Programmes" links={programmeLinks} />
               <FooterLinkSection title="Services" links={servicesLinks} />
@@ -118,7 +118,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <p className="text-center text-sm text-gray-500 pt-8 px-4 border-t border-gray-100">
+        <p className="text-center text-sm text-gray-500 pt-0 px-0 border-t border-gray-100">
           All rights reserved © Solavise Tech {new Date().getFullYear()}
         </p>
       </div>
