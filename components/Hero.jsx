@@ -13,9 +13,30 @@ export default function Hero() {
           <div className="flex flex-col md:flex-row flex-1 mb-16 md:mb-8">
             {/* Text Section */}
             <div className="flex flex-col px-6 pt-8 md:w-1/2 md:justify-center md:px-12 lg:px-16">
-              <p className="text-gray-700 text-lg md:text-xl mb-6">
-                World class Training
-              </p>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="flex bg-blue-100 items-center gap-2 border border-blue-800/30 rounded-full py-2 px-4">
+                  <div className="w-6 h-6 rounded-full border bg-blue-200 border-blue-800/30 flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      className="w-3 h-3 text-blue-800"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-blue-800 text-[12px] font-light uppercase tracking-wider">
+                    The Leader in Online Learning
+                  </p>
+                </div>
+              </div>
+
               <h1 className="font-phonk-regular text-[32px] md:text-[32px] lg:text-[40px] leading-[1.1] mb-4">
                 <span className="block">Build a Successful </span>
                 <span className="block">Career In Your </span>
