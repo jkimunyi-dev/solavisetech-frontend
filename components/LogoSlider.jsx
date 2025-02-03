@@ -15,8 +15,8 @@ export default function LogoSlider() {
   ];
 
   return (
-    <div className="w-full h-full overflow-x-auto bg-white">
-      <div className="flex gap-8 px-4 justify-start h-full">
+    <div className="w-full h-full bg-white relative overflow-hidden">
+      <div className="flex gap-8 animate-scroll px-4 absolute whitespace-nowrap">
         {logos.map((logo) => (
           <div
             key={logo.id}

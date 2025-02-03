@@ -1,41 +1,30 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Zap } from "lucide-react"; // Changed from LightningBoltIcon to Zap
 import LogoSlider from "./LogoSlider";
 
 export default function Hero() {
   return (
-    <main className="pt-10 flex justify-center w-full bg-white">
+    <main className="flex justify-center w-full bg-white">
       <div className="w-full max-w-[1440px]">
-        <section className="flex flex-col min-h-[calc(100vh-64px)] md:h-[700px] lg:h-[800px]">
-          {/* Main content wrapper with adjusted height */}
-          <div className="flex flex-col md:flex-row flex-1 mb-16 md:mb-8">
+        <section className="flex flex-col h-screen md:h-[700px] lg:h-[800px]">
+          {/* Main content wrapper */}
+          <div className="flex flex-col md:flex-row flex-1">
             {/* Text Section */}
             <div className="flex flex-col px-6 pt-8 md:w-1/2 md:justify-center md:px-12 lg:px-16">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="flex bg-blue-100 items-center gap-2 border border-blue-800/30 rounded-full py-2 px-4">
+              <Card className="w-fit  rounded-full bg-blue-100 border-blue-800/30 mb-4">
+                <div className="flex items-center gap-2 py-2 px-4">
                   <div className="w-6 h-6 rounded-full border bg-blue-200 border-blue-800/30 flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      className="w-3 h-3 text-blue-800"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
+                    <Zap className="w-3 h-3 text-blue-800" />
                   </div>
                   <p className="text-blue-800 text-[12px] font-light uppercase tracking-wider">
                     The Leader in Online Learning
                   </p>
                 </div>
-              </div>
+              </Card>
 
               <h1 className="font-phonk-regular text-[32px] md:text-[32px] lg:text-[40px] leading-[1.1] mb-4">
                 <span className="block">Build a Successful </span>
@@ -51,23 +40,22 @@ export default function Hero() {
               </p>
 
               <div className="flex gap-4">
-                <button
-                  className="rounded-lg border-2 border-blue-800 py-3 px-6 font-sans font-bold uppercase text-blue-900 transition-all hover:opacity-75 focus:ring focus:ring-blue-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50"
-                  data-ripple-dark="true"
+                <Button
+                  variant="outline"
+                  className="border-2 border-blue-800 font-bold uppercase text-blue-900 hover:opacity-75"
                 >
                   Get Started
-                </button>
+                </Button>
 
-                <button
-                  className="rounded-lg bg-yellow-500 py-3 px-6 font-sans font-bold uppercase text-white shadow-md shadow-yellow-500/20 transition-all hover:shadow-lg hover:shadow-yellow-500/40 focus:opacity-[0.85] active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50"
-                  data-ripple-light="true"
+                <Button
+                  className="bg-yellow-500 font-bold uppercase text-white shadow-md shadow-yellow-500/20 hover:shadow-lg hover:shadow-yellow-500/40 hover:bg-yellow-500"
                 >
                   Learn More
-                </button>
+                </Button>
               </div>
             </div>
 
-            {/* Image Section with adjusted positioning */}
+            {/* Image Section */}
             <div className="relative flex-1 md:w-1/2 flex items-center justify-center mt-8 md:mt-0">
               <img
                 src="/hero.png"
@@ -82,7 +70,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Logo Slider with fixed height */}
+          {/* Logo Slider */}
           <div className="h-[120px] md:h-[150px] w-full">
             <LogoSlider />
           </div>
